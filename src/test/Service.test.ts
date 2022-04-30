@@ -41,13 +41,13 @@ describe('services', () => {
 
 		const { data } = await axios.get(`http://localhost:1337/test`);
 
-		expect(data! as object).toBe('This is a TestService route.')
+		expect(data! as object).toBe('This is a TestService route.');
 
 		TService.Unmount();
 
-		expect(axios.get(`http://localhost:1337/test`)).rejects.toBeInstanceOf(AxiosError);
+		expect(axios.get(`http://localhost:1337/test`)).rejects.toBeInstanceOf(
+			AxiosError
+		);
 	});
-	afterAll(
-		() => srv.close()
-	);
+	afterAll(() => srv.close());
 });
