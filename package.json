@@ -5,14 +5,13 @@
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "eslint": "^8.14.0",
-    "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.6.4"
   },
-  "name": "web-service",
+  "name": "serviceer",
   "version": "1.0.0",
-  "description": "Allows quick creation and deployment of subdomain based services.",
+  "description": "Allows quick creation and deployment of services.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "dependencies": {
@@ -124,24 +123,27 @@
     "yallist": "^4.0.0"
   },
   "scripts": {
-    "test": "npx jest --detectOpenHandles --config ./jest.config.js",
+    "test": "npx jest --detectOpenHandles --runInBand --config ./jest.config.js",
+    "build": "npx tsc",
+    "clean": "rm -rf ./build/*",
     "lint": "npx eslint -c .eslintrc.js",
     "format": "npx prettier --write \"src/**/*.ts\"",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm run clean"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unauth0rized/web-service.git"
+    "url": "git+https://github.com/unauth0rized/serviceer.git"
   },
   "keywords": [
     "web",
     "service",
     "webservice",
-    "services"
+    "services",
+    "express"
   ],
   "files": [
     "build/**/*"
@@ -149,7 +151,7 @@
   "author": "unauthorized",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/unauth0rized/web-service/issues"
+    "url": "https://github.com/unauth0rized/serviceer/issues"
   },
-  "homepage": "https://github.com/unauth0rized/web-service#readme"
+  "homepage": "https://github.com/unauth0rized/serviceer#readme"
 }

@@ -20,7 +20,7 @@ const NormalizeNamespace = (
 		case ServiceMountType.Subdomain:
 			const SubdomainComponents = Namespace.split('.')
 				.filter((_) => _.replaceAll(' ', '') !== '')
-				.map((_) => _.toLowerCase());
+				.map((_) => _.toLowerCase()).reverse();
 			return SubdomainComponents.join('.');
 		case ServiceMountType.PathComponent:
 			const PathComponents = Namespace.split('.')
