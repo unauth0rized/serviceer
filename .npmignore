@@ -4,4 +4,4 @@ tsconfig.json
 .eslintignore
 .gitignore
 .prettierrc
-.jestrc
+jest.config.js
