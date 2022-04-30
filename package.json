@@ -10,7 +10,7 @@
     "typescript": "^4.6.4"
   },
   "name": "serviceer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allows quick creation and deployment of services.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
