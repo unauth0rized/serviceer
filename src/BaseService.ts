@@ -34,7 +34,6 @@ const NormalizeNamespace = (
 };
 
 declare interface BaseService {
-	on(Event: 'visit', Listener: (Visitor: Request) => void): this;
 	on(Event: string, Listener: Function): this;
 }
 
